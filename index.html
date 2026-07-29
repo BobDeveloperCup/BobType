@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BobType Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="header">
+            <span>✎ BobType Central</span>
+            <button id="closePanelBtn">✕</button>
+        </div>
+        <div class="body">
+            <label>Título</label>
+            <textarea id="titleInput" rows="2" placeholder="Digite o título..."></textarea>
+            
+            <label>Redação</label>
+            <textarea id="redaInput" rows="6" placeholder="Cole sua redação aqui..."></textarea>
+            
+            <label>Velocidade</label>
+            <select id="speedSelect">
+                <option value="instant">⚡ Instantâneo</option>
+                <option value="typed">✎ Modo Digitado</option>
+            </select>
+            
+            <div class="status-box" id="statusBox">Pronto para iniciar</div>
+            
+            <button class="action" id="actionBtn">Enviar para a Página</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
