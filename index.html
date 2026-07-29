@@ -13,6 +13,7 @@
             <button id="closePanelBtn">✕</button>
         </div>
         <div class="body">
+            <!-- Entradas de Texto -->
             <label>Título</label>
             <textarea id="titleInput" rows="2" placeholder="Digite o título..."></textarea>
             
@@ -24,10 +25,38 @@
                 <option value="instant">⚡ Instantâneo</option>
                 <option value="typed">✎ Modo Digitado</option>
             </select>
+
+            <!-- Captcha Matemático Simples -->
+            <div class="captcha-box">
+                <label id="captchaQuestion">Quanto é X + Y?</label>
+                <input type="number" id="captchaInput" placeholder="Responda para liberar">
+            </div>
+
+            <!-- Termos de Uso -->
+            <div class="terms-container">
+                <input type="checkbox" id="termsCheck">
+                <label for="termsCheck" class="terms-label">Concordo que sou o único responsável pelo uso desta ferramenta e acordo com os termos de uso.</label>
+            </div>
             
-            <div class="status-box" id="statusBox">Pronto para iniciar</div>
+            <div class="status-box" id="statusBox">Preencha os campos e aceite os termos</div>
             
-            <button class="action" id="actionBtn">Enviar para a Página</button>
+            <button class="action" id="actionBtn" disabled>Enviar para a Página</button>
+
+            <!-- Seção de Webhook / Bookmarklet -->
+            <div class="webhook-section">
+                <label>Copiar Webhook (Bookmarklet)</label>
+                <div class="copy-row">
+                    <input type="text" id="webhookCode" readonly value="javascript:(function(){window.open('https://bobdevelopercup.github.io/BobType/','_blank');...})();">
+                    <button id="copyWebhookBtn">Copiar</button>
+                </div>
+            </div>
+
+            <!-- Links Sociais / Portfólio -->
+            <div class="footer-links">
+                <a href="https://discord.com/invite/SHhxwhBCjw" target="_blank">Discord</a>
+                <span>•</span>
+                <a href="https://bobdevelopercup.github.io/BobDeveloperCup/" target="_blank">Portfólio</a>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
