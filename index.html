@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BobType I — Script Redação</title>
+    <link rel="icon" type="image/png" href="Icone.png?v=2">
+    <link rel="apple-touch-icon" href="Icone.png?v=2">
+    <meta name="theme-color" content="#0a0a0f" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f4f4f7" media="(prefers-color-scheme: light)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <img src="Icone.png?v=2" alt="BobType" class="logo-img">
+                <h1 class="logo-text">BobType I <span class="logo-sub">— Script Redação</span></h1>
+            </div>
+            <nav class="nav-links">
+                <a href="https://discord.com/invite/SHhxwhBCjw" target="_blank" class="nav-link">
+                    <svg class="discord-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    Discord
+                </a>
+                <a href="https://bobdevelopercup.github.io/BobDeveloperCup/" target="_blank" class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Portfólio
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </nav>
+        </header>
+
+        <main class="grid-layout">
+            <section class="card info-card">
+                <div class="card-header">
+                    <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <h2>Central de Informações</h2>
+                </div>
+
+                <div class="topic">
+                    <h3>O que é o BobType?</h3>
+                    <p>Uma ferramenta avançada para automatizar o preenchimento de redações e textos de forma inteligente e segura através de comunicação via abas.</p>
+                </div>
+
+                <div class="topic">
+                    <h3>Termos de Responsabilidade</h3>
+                    <p>Ao utilizar esta ferramenta, você concorda que é o <strong>único e exclusivo responsável</strong> por seu uso, conformidade e diretrizes aplicadas. O desenvolvedor não se responsabiliza pelo mau uso.</p>
+                </div>
+
+                <div class="topic">
+                    <h3>Como Usar (Webhook / Bookmarklet)</h3>
+                    <ol>
+                        <li>Copie o código do webhook abaixo.</li>
+                        <li>Crie um novo favorito no seu navegador.</li>
+                        <li>Cole o código na URL do favorito.</li>
+                        <li>Abra a página de destino e clique no favorito para conectar o painel.</li>
+                    </ol>
+                </div>
+
+                <div class="webhook-box">
+                    <label>Código do Webhook (Bookmarklet)</label>
+                    <div class="copy-row">
+                        <input type="text" id="webhookCode" readonly>
+                        <button id="copyWebhookBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            Copiar
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card control-card">
+                <div class="card-header">
+                    <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <h2>Painel de Controle</h2>
+                </div>
+
+                <div class="form-group">
+                    <label for="titleInput">Título</label>
+                    <textarea id="titleInput" rows="2" placeholder="Digite o título da redação..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="redaInput">Redação</label>
+                    <textarea id="redaInput" rows="7" placeholder="Digite ou cole sua redação completa aqui..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="speedSelect">Velocidade de Envio</label>
+                    <div class="select-wrapper">
+                        <select id="speedSelect">
+                            <option value="instant">Instantâneo (Preenchimento Direto)</option>
+                            <option value="typed">Modo Digitado (Simulação Realista)</option>
+                        </select>
+                        <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                </div>
+
+                <div class="speed-options">
+                    <div class="speed-tag">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span>Instantâneo</span>
+                    </div>
+                    <div class="speed-tag">
+                        <svg class="pencil-icon" width="14" height="14" viewBox="0 0 57.25 63.86">
+                            <g clip-path="url(#clip0_14741_62788)">
+                                <path d="M32.6293 60.9273H6.60082C5.53879 60.9273 4.52026 60.4573 3.76929 59.6207C3.01833 58.784 2.59644 57.6493 2.59644 56.4662V7.39397C2.59644 6.21081 3.01833 5.07611 3.76929 4.23949C4.52026 3.40287 5.53879 2.93286 6.60082 2.93286H36.6337M42.6403 43.0828H54.6535M14.6096 2.93286V60.9273M24.6206 18.5467H32.6293M42.6403 16.3162L48.6469 2.93286L54.6535 16.3162V54.2356C54.6535 56.0104 54.0206 57.7124 52.8942 58.9673C51.7677 60.2223 50.2399 60.9273 48.6469 60.9273C47.0538 60.9273 45.526 60.2223 44.3996 58.9673C43.2731 57.7124 42.6403 56.0104 42.6403 54.2356V16.3162Z" stroke="currentColor" stroke-width="4.8538" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M42.6401 43.0828H54.6533M42.6401 16.3162L48.6467 2.93286L54.6533 16.3162V54.2356C54.6533 56.0104 54.0205 57.7124 52.894 58.9673C51.7676 60.2223 50.2398 60.9273 48.6467 60.9273C47.0537 60.2223 45.5259 60.2223 44.3994 58.9673C43.273 57.7124 42.6401 56.0104 42.6401 54.2356V16.3162Z" stroke="currentColor" stroke-width="4.8538" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_14741_62788">
+                                    <rect width="57.25" height="63.86" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <span>Modo Digitado</span>
+                    </div>
+                </div>
+
+                <div class="terms-acceptance">
+                    <input type="checkbox" id="termsCheck">
+                    <label for="termsCheck">Li e concordo com os termos de responsabilidade.</label>
+                </div>
+
+                <div class="status-box" id="statusBox">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <span>Aguardando aceite dos termos</span>
+                </div>
+
+                <button class="action-btn" id="actionBtn" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Enviar para a Página Conectada
+                </button>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 BobType Development. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
