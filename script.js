@@ -1,22 +1,13 @@
-const actionBtn = document.getElementById('actionBtn');
-const closePanelBtn = document.getElementById('closePanelBtn');
 const titleInput = document.getElementById('titleInput');
 const redaInput = document.getElementById('redaInput');
 const speedSelect = document.getElementById('speedSelect');
-const statusBox = document.getElementById('statusBox');
 const termsCheck = document.getElementById('termsCheck');
-const captchaInput = document.getElementById('captchaInput');
-const captchaQuestion = document.getElementById('captchaQuestion');
+const actionBtn = document.getElementById('actionBtn');
+const statusBox = document.getElementById('statusBox');
 const webhookCodeInput = document.getElementById('webhookCode');
 const copyWebhookBtn = document.getElementById('copyWebhookBtn');
 
-// Gerar Captcha Matemático Simples
-const num1 = Math.floor(Math.random() * 10) + 1;
-const num2 = Math.floor(Math.random() * 10) + 1;
-const expectedCaptchaResult = num1 + num2;
-captchaQuestion.innerText = `Quanto é ${num1} + ${num2}?`;
-
-// Script atualizado do Bookmarklet para preencher no botão de cópia
+// Script do Webhook para injetar na aba principal via Bookmarklet
 const bookmarkletScript = `javascript:(function() {
     const targetUrl = 'https://bobdevelopercup.github.io/BobType/';
     const controlWin = window.open(targetUrl, '_blank');
@@ -78,49 +69,44 @@ const bookmarkletScript = `javascript:(function() {
 
 webhookCodeInput.value = bookmarkletScript;
 
-// Copiar código do webhook
+// Ação de copiar o webhook
 copyWebhookBtn.onclick = () => {
     navigator.clipboard.writeText(bookmarkletScript);
     copyWebhookBtn.innerText = 'Copiado!';
     setTimeout(() => { copyWebhookBtn.innerText = 'Copiar'; }, 2000);
 };
 
-// Validação em tempo real para habilitar o botão de envio
+// Validação de estado e liberação do botão
 function validateForm() {
     const isTermsAccepted = termsCheck.checked;
-    const isCaptchaCorrect = parseInt(captchaInput.value) === expectedCaptchaResult;
     const hasText = titleInput.value.trim() !== '' || redaInput.value.trim() !== '';
 
-    if (isTermsAccepted && isCaptchaCorrect && hasText) {
+    if (isTermsAccepted && hasText) {
         actionBtn.disabled = false;
-        statusBox.innerText = 'Pronto para enviar!';
+        statusBox.innerText = 'Pronto para enviar dados.';
         statusBox.style.color = '#22c55e';
     } else {
         actionBtn.disabled = true;
         if (!isTermsAccepted) {
-            statusBox.innerText = '⚠ Você precisa aceitar os termos de responsabilidade.';
-        } else if (!isCaptchaCorrect) {
-            statusBox.innerText = '⚠ Resolva o captcha corretamente.';
+            statusBox.innerText = '⚠ Aceite os termos de responsabilidade para continuar.';
         } else if (!hasText) {
-            statusBox.innerText = '⚠ Digite um título ou cole sua redação.';
+            statusBox.innerText = '⚠ Preencha o título ou a redação.';
         }
         statusBox.style.color = '#ef4444';
     }
 }
 
 termsCheck.onchange = validateForm;
-captchaInput.oninput = validateForm;
 titleInput.oninput = validateForm;
 redaInput.oninput = validateForm;
 
-closePanelBtn.onclick = () => window.close();
-
+// Disparo da mensagem para a página conectada via window.opener
 actionBtn.onclick = () => {
     const titleText = titleInput.value;
     const redaText = redaInput.value;
     const mode = speedSelect.value;
 
-    statusBox.innerText = 'Enviando dados...';
+    statusBox.innerText = 'Transmitindo dados...';
     statusBox.style.color = '#a1a1aa';
 
     if (window.opener) {
@@ -134,7 +120,7 @@ actionBtn.onclick = () => {
         statusBox.innerText = '✔ Dados enviados com sucesso!';
         statusBox.style.color = '#22c55e';
     } else {
-        statusBox.innerText = '⚠ Janela principal fechada ou bloqueada.';
+        statusBox.innerText = '⚠ Nenhuma janela/aba conectada via webhook.';
         statusBox.style.color = '#ef4444';
     }
 };
